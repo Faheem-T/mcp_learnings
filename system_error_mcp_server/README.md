@@ -1,15 +1,26 @@
-# system_error_mcp_server
+# System Error MCP Server
 
-To install dependencies:
+This MCP server provides tools to access system error logs.
 
-```bash
-bun install
-```
+## Tools
 
-To run:
+### `get_system_error_logs`
+
+Retrieves system error logs using `journalctl` for a specified duration.
+
+- **Input**:
+  - `hours` (number): The number of hours to look back for error logs.
+- **Output**:
+  - `logs` (string): The raw text output of the `journalctl` command containing error logs.
+
+## Usage
+
+This server is designed to be used with an MCP client. It runs on `stdio` transport.
+
+## Development
+
+To run the server locally:
 
 ```bash
 bun run index.ts
 ```
-
-This project was created using `bun init` in bun v1.3.4. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
